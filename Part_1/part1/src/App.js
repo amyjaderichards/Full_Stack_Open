@@ -1,22 +1,23 @@
-const Hello = (props) => {
+import Header from './components/Header';
+import Content from './components/Content';
+import Total from './components/Total';
+
+const App = () => {
+  const course = 'Half Stack application development';
+  const part1 = 'Fundamentals of React';
+  const exercises1 = 10;
+  const part2 = 'Using props to pass data';
+  const exercises2 = 7;
+  const part3 = 'State of a component';
+  const exercises3 = 14;
+
   return (
     <div>
-      <p>Hello {props.name}, you are {props.age} years old!</p>
+      <Header course={course}/>
+      <Content chapterName={[part1, part2, part3]} numberOfExercises={[exercises1, exercises2, exercises3]}/>
+      <Total totalExercises={exercises1 + exercises2 + exercises3}/>
     </div>
   )
 }
-
-const App = () => {
-  const name = 'Jack';
-  const age = 26;
-
-  return (
-    <>
-      <h1>Greetings</h1>
-      <Hello name='Amy' age={age - 1}/>
-      <Hello name={name} age={age}/>
-    </>
-  );
-};
 
 export default App;
