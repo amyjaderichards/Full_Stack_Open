@@ -1,13 +1,14 @@
 import Part from './Part';
 
 const Content = (props) => {
-    const chapterNames = props.chapterName;
-    const numberOfExercises = props.numberOfExercises;
+    const chapterNames = props.chapters.map(chapter => chapter.name);
+    const numberOfExercises = props.chapters.map(chapter => chapter.exercises);
+
     return (
         <div>
-            <Part chapterName={chapterNames[0]} numberOfExercises={numberOfExercises[0]}/>
-            <Part chapterName={chapterNames[1]} numberOfExercises={numberOfExercises[1]}/>
-            <Part chapterName={chapterNames[2]} numberOfExercises={numberOfExercises[2]}/>
+            <Part chapter={chapterNames[0]} exercises={numberOfExercises[0]}/>
+            <Part chapter={chapterNames[1]} exercises={numberOfExercises[1]}/>
+            <Part chapter={chapterNames[2]} exercises={numberOfExercises[2]}/>
         </div>
     )
 }
